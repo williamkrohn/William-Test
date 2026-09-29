@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>William Test</title>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #1d2330;
+      --muted: #5b6477;
+      --accent: #4f46e5;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #12141b;
+        --card: #1c1f2a;
+        --text: #e8eaf0;
+        --muted: #9aa3b5;
+        --accent: #818cf8;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 16px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    .card {
+      width: 100%;
+      max-width: 420px;
+      background: var(--card);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+    h1 { margin: 0 0 8px; font-size: 1.8rem; }
+    p { margin: 0 0 24px; color: var(--muted); }
+    .count {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    button {
+      font: inherit;
+      border: 0;
+      border-radius: 10px;
+      padding: 10px 18px;
+      margin: 4px;
+      cursor: pointer;
+      background: var(--accent);
+      color: #fff;
+    }
+    button.secondary {
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid currentColor;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>Hei, William! 👋</h1>
+    <p>Dette er en enkel testside laget med Claude Code.</p>
+    <div class="count" id="count">0</div>
+    <button id="plus">Klikk meg</button>
+    <button id="reset" class="secondary">Nullstill</button>
+  </main>
+
+  <script>
+    let count = 0;
+    const el = document.getElementById("count");
+    document.getElementById("plus").addEventListener("click", () => {
+      el.textContent = ++count;
+    });
+    document.getElementById("reset").addEventListener("click", () => {
+      count = 0;
+      el.textContent = count;
+    });
+  </script>
+</body>
+</html>
