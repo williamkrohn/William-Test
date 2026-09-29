@@ -13,13 +13,20 @@
       --accent: #4f46e5;
     }
     @media (prefers-color-scheme: dark) {
-      :root {
+      :root:not([data-theme="light"]) {
         --bg: #12141b;
         --card: #1c1f2a;
         --text: #e8eaf0;
         --muted: #9aa3b5;
         --accent: #818cf8;
       }
+    }
+    :root[data-theme="dark"] {
+      --bg: #12141b;
+      --card: #1c1f2a;
+      --text: #e8eaf0;
+      --muted: #9aa3b5;
+      --accent: #818cf8;
     }
     * { box-sizing: border-box; }
     body {
